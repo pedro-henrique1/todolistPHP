@@ -1,0 +1,35 @@
+body {
+    margin: 0;
+    /* background-color: #e1e8eb; */
+    font-family: "Ubuntu", sans-serif;
+}
+
+main {
+    margin: 0 4rem 0 4rem;
+}
+
+.container-fluid {
+    margin: 10rem 0 0 0;
+}
+
+.list > .row-list:hover {
+    background-color: #656565;
+}
+.list {
+    margin-top: 1%;
+    /* width: 55%; */
+}
+
+.form-check {
+    margin-top: 1.2%;
+}
+.type {
+    color: #141313;
+}
+.form-check-label {
+    margin-top: -1px;
+}
+
+input[type="checkbox"]:checked {
+    background-color: rgb(212, 39, 39);
+}
