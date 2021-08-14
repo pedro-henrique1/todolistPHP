@@ -1,9 +1,9 @@
 <?php
 
-use App\Http\Controllers\CreateTaskController;
+use App\Http\Controllers\TaskController;
 use App\Http\Controllers\DeleteTaskController;
-use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UpdateTaskController;
+use App\Http\Controllers\TaskUpdateController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,8 +20,9 @@ use Illuminate\Support\Facades\Route;
 //Route::get('/', function () {
 //    return view('welcome');
 //});
-Route::get('/', [HomeController::class, 'test'])->name('home');
-Route::post('/create', [CreateTaskController::class, 'store'])->name('tasks.create');
-Route::get('/edit/show/{id}', [UpdateTaskController::class, 'show_edit'])->name('tasks.edit.show');
-Route::put('/edit/{id}', [UpdateTaskController::class, 'edit'])->name('edit');
-Route::get('/delete/{id}', [DeleteTaskController::class, 'deletar'])->name('tasks.delete');
+Route::get('/', [TaskController::class, 'view'])->name('home');
+Route::post('/create', [TaskController::class, 'store'])->name('tasks.create');
+Route::get('/edit/show/{id}', [TaskController::class, 'show_edit'])->name('tasks.edit.show');
+Route::put('/edit/{id}', [TaskController::class, 'edit'])->name('edit');
+Route::get('/delete/{id}', [TaskController::class, 'deletar'])->name('tasks.delete');
+Route::get('/updated-task/{id}', [TaskController::class, 'updated'])->name('task.update');
