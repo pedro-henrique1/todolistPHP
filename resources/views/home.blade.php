@@ -30,19 +30,33 @@
                 <div class="row">
                     <div class="form-check col-lg-7" style="margin-left: 22px">
                         @if($item->status == 'checked')
-                            <input class="form-check-input checkbox" type="checkbox" id="check" value="{{ $item->id }}" checked/>
+                            <input class="form-check-input checkbox" type="checkbox" id="check" value="{{ $item->id }}"
+                                   checked/>
                         @else
-                            <input class="form-check-input checkbox" type="checkbox" id="check" value="{{ $item->id }}"/>
+                            <input class="form-check-input checkbox" type="checkbox" id="check"
+                                   value="{{ $item->id }}"/>
                         @endif
 
                         <label class="form-check-label" for="check">{{$item->title}}</label>
                     </div>
 
                     <div class="col-2 align-self-end">
-                        <span>{{$item->difficulty}}</span>
+                        @if($item->difficulty == 'easy')
+                            <span class="difficulty text-success">{{$item->difficulty}}</span>
+                        @elseif($item->difficulty == 'medium')
+                            <span class="difficulty text-warning">{{$item->difficulty}}</span>
+                        @elseif($item->difficulty == 'difficult')
+                            <span class="difficulty text-danger">{{$item->difficulty}}</span>
+                        @endif
                     </div>
                     <div class="col-1 align-self-end">
-                        <span>{{$item->important}}</span>
+                        @if($item->important == 'easy')
+                            <span class="difficulty text-success">{{$item->important}}</span>
+                        @elseif($item->important == 'medium')
+                            <span class="difficulty text-warning">{{$item->important}}</span>
+                        @elseif($item->important == 'difficult')
+                            <span class="difficulty text-danger">{{$item->important}}</span>
+                        @endif
                     </div>
                     <div class="col align-self-end">
                         <div class="" style="text-align: end">
@@ -120,6 +134,7 @@
 
 @push('scripts')
     <script>
+        let difficulty = $('.difficulty').text();
         $('.adicionar').click(function (e) {
             $('.modal').show();
             $('.container-fluid').css(
@@ -135,7 +150,15 @@
         $('.checkbox').click(function (e) {
             let id = this.value;
             window.location.href = "http://localhost:3000/updated-task/" + id
-        })
+        });
+        // console.log(difficulty)
+        //     $.map(difficulty, function (elementOrValue, indexOrKey) {
+        //             console.log(elementOrValue);
+        //     });
+        //     if (difficulty === 'easy'){
+        //         console.log('foi');
+        // difficulty.addClass('success')
+        // }
 
     </script>
 @endpush
