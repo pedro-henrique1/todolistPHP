@@ -1,6 +1,5 @@
 body {
     margin: 0;
-    /* background-color: #e1e8eb; */
     font-family: "Ubuntu", sans-serif;
 }
 
@@ -15,21 +14,129 @@ main {
 .list > .row-list:hover {
     background-color: #656565;
 }
+
 .list {
     margin-top: 1%;
-    /* width: 55%; */
 }
 
 .form-check {
     margin-top: 1.2%;
 }
+
 .type {
     color: #141313;
 }
+
+.icon-edit,
+.icon-delete,
+.adicionar {
+    width: 20%;
+    color: #212529;
+}
+
 .form-check-label {
     margin-top: -1px;
 }
 
-input[type="checkbox"]:checked {
-    background-color: rgb(212, 39, 39);
+@media screen and (max-width: 991px) and (min-width: 804px) {
+    .col-lg-7 {
+        width: 58%;
+    }
+
+    .icon-delete,
+    .icon-edit,
+    .adicionar {
+        width: 27%;
+    }
+}
+
+@media screen and (max-width: 804px) and (min-width: 619px) {
+    .col-lg-7 {
+        width: 50%;
+    }
+    .icon-delete,
+    .icon-edit,
+    .adicionar {
+        width: 27%;
+    }
+}
+
+@media screen and (max-width: 619px) and (min-width: 500px) {
+    .col-lg-7 {
+        width: 50%;
+    }
+    .col-1 {
+        margin-left: 1rem;
+    }
+
+    .icon-delete,
+    .icon-edit,
+    .adicionar {
+        width: 34%;
+    }
+
+    .icone {
+        margin: -4rem 0 0 0;
+    }
+}
+
+@media screen and (max-width: 500px) and (min-width: 477px) {
+    .col-lg-7 {
+        width: 30%;
+    }
+    .col-1 {
+        margin-left: 1rem;
+    }
+
+    .icon-delete,
+    .icon-edit,
+    .adicionar {
+        width: 27%;
+    }
+}
+
+@media screen and (max-width: 477px) and (min-width: 350px) {
+    .col-lg-7 {
+        width: 30%;
+    }
+    .col-1 {
+        margin-left: 1rem;
+    }
+
+    .container-fluid {
+        width: 141% !important;
+        margin-left: -4rem;
+    }
+
+    .icon-delete,
+    .icon-edit,
+    .adicionar {
+        width: 27%;
+    }
+    .col-1 {
+        margin-left: 2rem;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .col-lg-7 {
+        width: 30%;
+    }
+    .col-1 {
+        margin-left: 1rem;
+    }
+
+    .container-fluid {
+        width: 160% !important;
+        margin-left: -4rem;
+    }
+
+    .icon-delete,
+    .icon-edit,
+    .adicionar {
+        width: 27%;
+    }
+    .col-1 {
+        margin-left: 2rem;
+    }
 }
